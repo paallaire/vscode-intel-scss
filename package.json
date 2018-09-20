@@ -1,0 +1,68 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paallaire/Base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paallaire/Base/issues"
+  },
+  "homepage": "https://github.com/paallaire/Base#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "cross-env": "^5.1.4",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-twig": "^1.2.0",
+    "gulp-util": "^3.0.8",
+    "gulp-wait2": "0.0.5",
+    "gulp-watch": "^5.0.0",
+    "laravel-mix": "^2.1.11",
+    "postcss-cli": "^6.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-reporter": "^5.0.0",
+    "postcss-scss": "^2.0.0",
+    "postcss-sorting": "^4.0.0",
+    "stylelint": "^9.4.0",
+    "stylelint-config-rational-order": "0.0.2",
+    "stylelint-config-sass-guidelines": "^5.0.0",
+    "stylelint-scss": "^3.1.0"
+  },
+  "dependencies": {
+    "@paallaire/debug-breakpoint-scss": "^1.0.1",
+    "aos": "^2.2.0",
+    "babel-polyfill": "^6.26.0",
+    "bowser": "^2.0.0-alpha.4",
+    "es6-promise": "^4.2.4",
+    "hamburgers": "^0.9.3",
+    "include-media": "^1.4.9",
+    "include-media-export": "^1.0.3",
+    "lodash": "^4.17.5",
+    "lost": "^8.2.1",
+    "normalize-scss": "^7.0.1",
+    "rellax": "^1.6.2",
+    "svgxuse": "^1.2.6",
+    "swiper": "^4.2.0",
+    "swup": "^0.4.2",
+    "vue": "^2.5.16",
+    "vue-scrollto": "^2.11.0",
+    "vue-template-compiler": "^2.5.16",
+    "vuex": "^3.0.1"
+  }
+}
