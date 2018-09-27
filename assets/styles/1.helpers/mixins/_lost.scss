@@ -1,0 +1,99 @@
+/* ==========================================================================
+    #LOST-CONTAINER-CENTER
+========================================================================== */
+
+@mixin lost-container-center( $column) {
+    @include center-block();
+
+    max-width: calc(#{$lost-rounder-with-unit} * #{$column} / #{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column} / #{$lost-grid-columns}));
+}
+
+
+/* ==========================================================================
+    #LOST-OFFSET
+========================================================================== */
+
+@mixin lost-offset($column) {
+    margin-left: calc(#{$lost-rounder-with-unit} * #{$column} / #{$lost-grid-columns} - ( 0 - #{$lost-gutter} * #{$column} / #{$lost-grid-columns})) !important;
+}
+
+
+/* ==========================================================================
+    #MAKE-LOST-CONTAINER-CENTER
+========================================================================== */
+
+@mixin make-lost-container-center() {
+
+    @for $i from 1 through $lost-grid-columns {
+        .lost-container-center-#{$i} {
+
+            @include lost-container-center( $i);
+
+            > div {
+
+                flex-basis: 100%;
+
+                width: 100%;
+
+                max-width: 100%;
+            }
+            
+        }
+
+    }
+
+}
+
+
+/* ==========================================================================
+    #MAKE-LOST-ROW-MQ
+========================================================================== */
+
+@mixin make-lost-row-mq($breakpoint) {
+    .lost-row-#{$breakpoint} {
+
+        @include media('>=#{$breakpoint}') {
+            lost-flex-container: row;
+        }
+
+    }
+
+}
+
+
+/* ==========================================================================
+    #MAKE-LOST-COLUMNS-MQ
+========================================================================== */
+
+@mixin make-lost-columns-mq($breakpoint, $maxColumns) {
+
+    @for $i from 1 through $maxColumns {
+        .lost-column-#{$breakpoint}-#{$i} {
+
+            @include media('>=#{$breakpoint}') {
+                lost-column: #{$i} / #{$maxColumns} 0 $lost-gutter-desktop;
+            }
+
+        }
+
+    }
+
+}
+
+
+/* ==========================================================================
+    #MAKE-LOST-COLUMNS
+========================================================================== */
+
+@mixin make-lost-columns($maxColumns) {
+
+    @for $i from 1 through $maxColumns {
+        .lost-column-#{$i} {
+            lost-column: #{$i} / #{$maxColumns} 0 $lost-gutter-desktop;
+        }
+
+    }
+
+}
+
+

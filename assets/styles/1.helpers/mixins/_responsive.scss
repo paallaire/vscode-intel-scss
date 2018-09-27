@@ -1,0 +1,22 @@
+@mixin responsive($property, $min-size, $max-size, $prefix: '', $suffix: '') {
+
+    $min-size: strip-unit($min-size);
+    $max-size: strip-unit($max-size);
+    $mobile-size: strip-unit(get-breakpoint('phone'));
+    $desktop-size: strip-unit(get-breakpoint('desktop'));
+
+    $y: ($max-size - ($desktop-size * $min-size / $mobile-size)) / (($desktop-size * -1 / $mobile-size) + 1);
+    $x: (($min-size / $mobile-size) - ($y * 1 / $mobile-size)) * 100;
+
+    #{$property}: #{$prefix} #{$max-size}px #{$suffix};
+
+    #{$property}: #{$prefix} calc(#{$x}vw + #{$y}px) #{$suffix};
+
+    @media only screen and #{'(max-width: #{$mobile-size}px)'} {
+        #{$property}: #{$prefix} #{$min-size}px #{$suffix};
+    }
+
+    @media only screen and #{'(min-width: #{$desktop-size}px)'} {
+        #{$property}: #{$prefix} #{$max-size}px #{$suffix};
+    }
+}

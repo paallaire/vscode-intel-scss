@@ -1,0 +1,47 @@
+/* ==========================================================================
+    #GET-CONTAINER
+========================================================================== */
+
+@function get-container($width) {
+    @return map-get($map-containers, $width);
+}
+
+/* ==========================================================================
+    #GET-BREAKPOINT
+========================================================================== */
+
+@function get-breakpoint($size) {
+    @return map-get($breakpoints, $size);
+}
+
+/* ==========================================================================
+      #MAP HEADING
+  ========================================================================== */
+
+/* Map font size heading*/
+
+@function get-heading-size($size) {
+    @return map-get($map-font-sizes-heading, $size);
+}
+
+/* Map font size heading (Mobile)*/
+
+@function get-heading-size-mobile($size) {
+    @return map-get($map-font-sizes-heading-mobile, $size);
+}
+
+/* ==========================================================================
+      #MAP TEXT
+  ========================================================================== */
+
+/* Map font size text*/
+
+@function get-text-size($size) {
+    @return map-get($map-font-sizes-text, $size);
+}
+
+/* Map font size text (Mobile)*/
+
+@function get-text-size-mobile($size) {
+    @return map-get($map-font-sizes-text-mobile, $size);
+}

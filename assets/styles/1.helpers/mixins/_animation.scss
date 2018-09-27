@@ -1,0 +1,68 @@
+/* ==========================================================================
+    #ANIMATION
+========================================================================== */
+
+/* fade-in*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation-name: fade-in;
+
+    animation-duration: 2s;
+
+    animation-iteration-count: 1;
+
+    animation-fill-mode: both;
+}
+
+/* fade-out*/
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation-name: fade-out;
+
+    animation-duration: 2s;
+
+    animation-iteration-count: 1;
+
+    animation-fill-mode: both;
+}
+
+/* spin-loader*/
+
+@keyframes spin-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-loader {
+    animation-name: spin-loader;
+
+    animation-duration: 1s;
+
+    animation-iteration-count: infinite;
+
+    animation-fill-mode: both;
+}

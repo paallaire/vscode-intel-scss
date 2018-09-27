@@ -1,0 +1,31 @@
+@mixin focuspoint() {
+
+    position: relative;
+
+    overflow: hidden;/*Any position but static should work*/
+
+    img {
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        display: block; /* fill and maintain aspect ratio */
+        width: auto;
+
+        min-width: 100%;
+
+        max-width: none;
+
+        height: auto;
+
+        min-height: 100%;
+
+        max-height: none;
+
+        margin: 0;
+    }
+    
+}

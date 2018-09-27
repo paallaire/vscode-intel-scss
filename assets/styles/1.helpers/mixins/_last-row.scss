@@ -1,0 +1,10 @@
+/* ==========================================================================
+    #last-row
+========================================================================== */
+
+@mixin last-row($columns, $element : 'li') {
+    #{$element}:nth-child(#{$columns}n+1):nth-last-child(-n+#{$columns}),
+    #{$element}:nth-child(#{$columns}n+1):nth-last-child(-n+#{$columns}) ~ #{$element} {
+        @content;
+    }
+}

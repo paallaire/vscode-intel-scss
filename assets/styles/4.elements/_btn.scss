@@ -1,0 +1,49 @@
+/* ==========================================================================
+    #btn-reset
+========================================================================== */
+
+@mixin btn-reset() {
+
+    appearance: none;
+
+    user-select: none;
+}
+
+/* ==========================================================================
+    #btn-primary
+========================================================================== */
+
+@mixin btn-primary() {
+    display: inline-block;
+
+    overflow: hidden;
+
+    color: $white;
+
+    font-weight: 500;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    vertical-align: middle;
+
+    background-color: $color-purple;
+
+    border-radius: 0;
+
+    &:hover {
+
+        color: $white;
+
+        background-color: $color-dark01;
+    }
+
+    &.is-disabled,
+    &:disabled {}
+
+    &.is-active {}
+  
+}

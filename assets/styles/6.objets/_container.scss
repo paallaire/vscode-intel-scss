@@ -1,0 +1,35 @@
+/* ==========================================================================
+    #CONTAINER
+========================================================================== */
+
+$o-container: '.o-container';
+
+@mixin container($type : 'desktop') {
+    @include center-block();
+
+    max-width: get-container($type);
+}
+
+@mixin container-padding($type : 'desktop') {
+    @include center-block();
+    @include padding-mobile();
+
+    max-width: get-container($type);
+}
+
+/* container with no paddding */
+@each $key,$value in $map-containers {
+    #{$o-container}-#{$key} {
+        @include container($key);
+    }
+
+}
+
+/* container with padding */
+@each $key, $value in $map-containers {
+    #{$o-container}-#{$key}-padding {
+        @include container-padding($key);
+    }
+
+}
+

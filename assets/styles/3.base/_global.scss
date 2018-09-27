@@ -1,0 +1,49 @@
+/* ==========================================================================
+    #HTML-BODY
+========================================================================== */
+
+body,
+html {}
+
+/* ==========================================================================
+    #HTML
+========================================================================== */
+
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    font-size: 100%;
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+
+    -webkit-text-size-adjust: 100%;
+
+    &.has-no-scroll {
+        overflow: hidden;
+    }
+
+    @for $i from 1 to 50 {
+        &.scroll-width-#{$i} {
+            width: calc(100vw - #{$i}px);
+        }
+    }
+}
+
+/* ==========================================================================
+    #BODY
+========================================================================== */
+
+body {
+    height: 100%;
+    overflow: visible;
+
+    color: $black;
+    font-size: $body-font-size;
+    font-family: $font-text;
+    line-height: $font-text-line-height;
+    word-wrap: break-word;
+    word-break: normal;
+
+    background-color: $white;
+}

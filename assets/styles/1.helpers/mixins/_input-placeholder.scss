@@ -1,0 +1,22 @@
+/* ==========================================================================
+    #INPUT-PLACEHOLDER
+
+    input,  
+    textarea {  
+        @include input-placeholder{
+            color: $grey;
+        }
+    }
+========================================================================== */
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:placeholder {
+        @content;
+    }
+
+}
+
