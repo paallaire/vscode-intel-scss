@@ -1,10 +1,8 @@
+const config = require('./package.json');
 const mix = require('laravel-mix');
 const path = require('path');
 
-const assetsPath = './assets';
-const distPath = './public/dist';
-
-const WEBSITE_URL = "http://example.localtest.me";
+//console.log( config.urls.dev );
 
 /*
  |--------------------------------------------------------------------------
@@ -20,13 +18,13 @@ const WEBSITE_URL = "http://example.localtest.me";
 mix
   .setPublicPath(path.normalize("public/dist"))
   .setResourceRoot("/dist/")
-  .js(assetsPath + '/scripts/main.js', 'scripts')
-  .sass(assetsPath + '/styles/main.scss', 'styles')
-  .copyDirectory(assetsPath + '/svg', distPath + "/svg",)
-  .copyDirectory(assetsPath + '/images', distPath + "/images")
-  .copyDirectory(assetsPath + '/fonts', distPath + "/fonts")
-  .copyDirectory(assetsPath + '/videos', distPath + "/videos")
-  .copyDirectory(assetsPath + '/json', distPath + "/json")
+  .js(config.paths.assets + '/scripts/main.js', 'scripts')
+  .sass(config.paths.assets + '/styles/main.scss', 'styles')
+  .copyDirectory(config.paths.assets + '/svg', config.paths.dist + "/svg",)
+  .copyDirectory(config.paths.assets + '/images', config.paths.dist + "/images")
+  .copyDirectory(config.paths.assets + '/fonts', config.paths.dist + "/fonts")
+  .copyDirectory(config.paths.assets + '/videos', config.paths.dist + "/videos")
+  .copyDirectory(config.paths.assets + '/json', config.paths.dist + "/json")
   .options({
     processCssUrls: false,
     postCss: [
@@ -53,14 +51,9 @@ if (!mix.inProduction()) {
       //proxy: WEBSITE_URL,
       proxy: false,
       server: {
-        baseDir: "./public/"
+        baseDir: config.browserSync.baseDir
       },
-      files: [
-        'public/**/*.html',
-        'public/dist/scripts/*.js',
-        'public/dist/styles/*.css',
-        'public/styleguide/**/*.html',
-      ],
+      files: config.browserSync.watch,
       ghostMode: {
         clicks: true,
         links: true,

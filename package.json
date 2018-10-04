@@ -20,10 +20,42 @@
     "url": "https://github.com/paallaire/Base/issues"
   },
   "homepage": "https://github.com/paallaire/Base#readme",
+  "urls": {
+    "production": "http://example.localtest.me",
+    "stage": "http://example.localtest.me",
+    "dev": "http://example.localtest.me"
+  },
+  "browserSync": {
+    "baseDir": "./public/",
+    "watch": [
+      "./public/**/*.html",
+      "./public/dist/scripts/*.js",
+      "./public/dist/styles/*.css",
+      "./public/styleguide/**/*.html"
+    ]
+  },
+  "paths": {
+    "assets": "./assets",
+    "dist": "./public/dist"
+  },
+  "twig": {
+    "site": {
+      "src": "./templates/pages/**.twig",
+      "watch": "./templates/pages/**.twig",
+      "dest": "./public",
+      "delete": "./public/*.html"
+    },
+    "styleguide": {
+      "src": "./styleguide/templates/pages/**.twig",
+      "watch": "./styleguide/templates/pages/**.twig",
+      "dest": "./public/styleguide",
+      "delete": "./public/styleguide/*.html"
+    }
+  },
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.7",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "cross-env": "^5.1.4",
+    "cross-env": "^5.2.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-notify": "^3.2.0",
@@ -32,37 +64,37 @@
     "gulp-twig": "^1.2.0",
     "gulp-util": "^3.0.8",
     "gulp-wait2": "0.0.5",
-    "gulp-watch": "^5.0.0",
-    "laravel-mix": "^2.1.11",
+    "gulp-watch": "^5.0.1",
+    "laravel-mix": "^2.1.14",
     "postcss-cli": "^6.0.0",
     "postcss-pxtorem": "^4.0.1",
-    "postcss-reporter": "^5.0.0",
+    "postcss-reporter": "^6.0.0",
     "postcss-scss": "^2.0.0",
     "postcss-sorting": "^4.0.0",
-    "stylelint": "^9.4.0",
+    "stylelint": "^9.6.0",
     "stylelint-config-rational-order": "0.0.2",
-    "stylelint-config-sass-guidelines": "^5.0.0",
-    "stylelint-scss": "^3.1.0"
+    "stylelint-config-sass-guidelines": "^5.2.0",
+    "stylelint-scss": "^3.3.1"
   },
   "dependencies": {
     "@paallaire/debug-breakpoint-scss": "^1.0.1",
-    "aos": "^2.2.0",
+    "aos": "^2.3.4",
     "babel-polyfill": "^6.26.0",
-    "bowser": "^2.0.0-alpha.4",
-    "es6-promise": "^4.2.4",
-    "hamburgers": "^0.9.3",
+    "bowser": "^2.0.0-beta.3",
+    "es6-promise": "^4.2.5",
+    "hamburgers": "^1.1.3",
     "include-media": "^1.4.9",
     "include-media-export": "^1.0.3",
-    "lodash": "^4.17.5",
-    "lost": "^8.2.1",
+    "lodash": "^4.17.11",
+    "lost": "^8.3.0",
     "normalize-scss": "^7.0.1",
-    "rellax": "^1.6.2",
+    "rellax": "^1.7.0",
     "svgxuse": "^1.2.6",
-    "swiper": "^4.2.0",
-    "swup": "^0.4.2",
-    "vue": "^2.5.16",
-    "vue-scrollto": "^2.11.0",
-    "vue-template-compiler": "^2.5.16",
+    "swiper": "^4.4.1",
+    "swup": "^1.2.1",
+    "vue": "^2.5.17",
+    "vue-scrollto": "^2.13.0",
+    "vue-template-compiler": "^2.5.17",
     "vuex": "^3.0.1"
   }
 }

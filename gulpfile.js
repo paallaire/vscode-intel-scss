@@ -1,3 +1,5 @@
+const config = require('./package.json');
+
 /* --------------------------------------------------------------------------------
     Modules
 -------------------------------------------------------------------------------- */
@@ -13,29 +15,6 @@ const wait = require('gulp-wait2');
 /* --------------------------------------------------------------------------------
     Variables
 -------------------------------------------------------------------------------- */
-
-const styleguide = {
-    src: [
-        './styleguide/templates/pages/**.twig'
-    ],
-    watch: [
-        './styleguide/sg-templates/**/*.twig',
-        './styleguide/templates/**/*.twig'
-    ],
-    dest: './public/styleguide',
-    delete: 'public/styleguide/*.html'
-}
-
-const site = {
-    src: [
-        './site/pages/**.twig'
-    ],
-    watch: [
-        './site/**/*.twig'
-    ],
-    dest: './public/',
-    delete: 'public/*.html'
-}
 
 const twigOptions = {
     verbose: true
@@ -58,13 +37,12 @@ const onError = (err) => {
 /* --------------------------------------------------------------------------------
     Clean
 -------------------------------------------------------------------------------- */
-gulp.task('clean', (done) => {
+gulp.task('clean', () => {
 
     del([
-        styleguide.delete,
-        site.delete
+        config.twig.site.delete,
+        config.twig.styleguide.delete
     ]);
-    done();
 
 });
 
@@ -74,33 +52,33 @@ gulp.task('clean', (done) => {
 -------------------------------------------------------------------------------- */
 gulp.task('watch', ['clean', 'build'], () => {
 
-    gulp.watch(styleguide.watch, ['watch-sg']);
-    gulp.watch(site.watch, ['watch-site']);
+    gulp.watch(config.twig.styleguide.watch, ['watch-sg']);
+    gulp.watch(config.twig.site.watch, ['watch-site']);
 
 });
 
 gulp.task('twig-sg', () => {
 
-    return gulp.src(styleguide.src)
+    return gulp.src(config.twig.styleguide.src)
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(wait(1000))
         .pipe(twig(twigOptions))
-        .pipe(gulp.dest(styleguide.dest));
-  
+        .pipe(gulp.dest(config.twig.styleguide.dest));
+
 });
 
 gulp.task('twig-site', () => {
 
-    return gulp.src(site.src)
+    return gulp.src(config.twig.site.src)
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(wait(1000))
         .pipe(twig(twigOptions))
-        .pipe(gulp.dest(site.dest));
-  
+        .pipe(gulp.dest(config.twig.site.dest));
+
 });
 
 /* --------------------------------------------------------------------------------
@@ -120,5 +98,3 @@ gulp.task('build', ['clean'], () => {
 gulp.task('default', ['clean'], () => {
     gulp.start('build');
 });
-
-
