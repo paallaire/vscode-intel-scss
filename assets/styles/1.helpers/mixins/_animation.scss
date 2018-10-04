@@ -4,6 +4,7 @@
 
 /* fade-in*/
 @keyframes fade-in {
+
     0% {
         opacity: 0;
     }
@@ -26,6 +27,7 @@
 /* fade-out*/
 
 @keyframes fade-out {
+
     0% {
         opacity: 1;
     }
@@ -48,6 +50,7 @@
 /* spin-loader*/
 
 @keyframes spin-loader {
+
     0% {
         transform: rotate(0deg);
     }

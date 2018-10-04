@@ -1,6 +1,7 @@
 // intrinsic.scss ------------------------
 // An Intrinsic Ratio Component
 // ---------------------------------------
+
 .intrinsic {
   
     // Intrinsic Ratio Box
@@ -20,6 +21,7 @@
   
 
     // Add as many ratios as you'd like...
+
     &.intrinsic--square {
         padding-top: 100%;
     }
@@ -33,6 +35,7 @@
     }
   
     // Force the item to fill the intrinsic box
+
     .intrinsic-item {
 
         position: absolute;

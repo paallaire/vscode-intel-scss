@@ -19,6 +19,7 @@ $o-container: '.o-container';
 
 /* container with no paddding */
 @each $key,$value in $map-containers {
+
     #{$o-container}-#{$key} {
         @include container($key);
     }
@@ -27,6 +28,7 @@ $o-container: '.o-container';
 
 /* container with padding */
 @each $key, $value in $map-containers {
+
     #{$o-container}-#{$key}-padding {
         @include container-padding($key);
     }

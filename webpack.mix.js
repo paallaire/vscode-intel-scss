@@ -22,11 +22,11 @@ mix
   .setResourceRoot("/dist/")
   .js(assetsPath + '/scripts/main.js', 'scripts')
   .sass(assetsPath + '/styles/main.scss', 'styles')
-  .copyDirectory(assetsPath + '/svg', distPath + "/svg", false)
-  .copyDirectory(assetsPath + '/images', distPath + "/images", false)
-  .copyDirectory(assetsPath + '/fonts', distPath + "/fonts", false)
-  .copyDirectory(assetsPath + '/videos', distPath + "/videos", false)
-  .copyDirectory(assetsPath + '/json', distPath + "/json", false)
+  .copyDirectory(assetsPath + '/svg', distPath + "/svg",)
+  .copyDirectory(assetsPath + '/images', distPath + "/images")
+  .copyDirectory(assetsPath + '/fonts', distPath + "/fonts")
+  .copyDirectory(assetsPath + '/videos', distPath + "/videos")
+  .copyDirectory(assetsPath + '/json', distPath + "/json")
   .options({
     processCssUrls: false,
     postCss: [

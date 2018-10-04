@@ -346,6 +346,7 @@
                 "severity": "warning"
             }
         ],
+        "rule-empty-line-before" :"always-multi-line",
         "scss/at-rule-no-unknown": [
             true,
             {

@@ -12,8 +12,9 @@ html {}
 html {
     overflow-x: hidden;
     overflow-y: scroll;
-
+    
     font-size: 100%;
+
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
 
@@ -24,20 +25,20 @@ html {
     }
 
     @for $i from 1 to 50 {
+
         &.scroll-width-#{$i} {
             width: calc(100vw - #{$i}px);
         }
     }
 }
 
+
+
 /* ==========================================================================
     #BODY
 ========================================================================== */
 
 body {
-    height: 100%;
-    overflow: visible;
-
     color: $black;
     font-size: $body-font-size;
     font-family: $font-text;

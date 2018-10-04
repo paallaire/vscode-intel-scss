@@ -25,6 +25,7 @@
 @mixin make-lost-container-center() {
 
     @for $i from 1 through $lost-grid-columns {
+
         .lost-container-center-#{$i} {
 
             @include lost-container-center( $i);
@@ -50,6 +51,7 @@
 ========================================================================== */
 
 @mixin make-lost-row-mq($breakpoint) {
+
     .lost-row-#{$breakpoint} {
 
         @include media('>=#{$breakpoint}') {
@@ -68,6 +70,7 @@
 @mixin make-lost-columns-mq($breakpoint, $maxColumns) {
 
     @for $i from 1 through $maxColumns {
+
         .lost-column-#{$breakpoint}-#{$i} {
 
             @include media('>=#{$breakpoint}') {
@@ -88,6 +91,7 @@
 @mixin make-lost-columns($maxColumns) {
 
     @for $i from 1 through $maxColumns {
+
         .lost-column-#{$i} {
             lost-column: #{$i} / #{$maxColumns} 0 $lost-gutter-desktop;
         }

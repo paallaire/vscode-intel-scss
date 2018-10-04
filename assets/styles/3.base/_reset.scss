@@ -96,12 +96,14 @@ textarea {
 }
 
 /* list*/
+
 ul,
 ol {
     list-style: none;
 }
 
 /* link*/
+
 a {
 
     color: inherit;
@@ -121,6 +123,7 @@ a {
 }
 
 /* images*/
+
 img {
 
     display: block;
@@ -133,6 +136,7 @@ img {
 }
 
 /* table*/
+
 table {
 
     border-collapse: collapse;
@@ -140,6 +144,7 @@ table {
 }
 
 /* strong*/
+
 b,
 strong {
     font-weight: bolder; /* Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+ */
@@ -154,6 +159,7 @@ input {
 }
 
 /* Apply cursor pointer to button elements */
+
 button,
 [type='button'],
 [type='reset'],
@@ -163,6 +169,7 @@ button,
 }
 
 /* Replace pointer cursor in disabled elements */
+
 [disabled] {
     cursor: default;
 }
@@ -203,6 +210,7 @@ button {
 }
 
 /* Remove inner padding and border in Firefox 4+ */
+
 button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
@@ -213,6 +221,7 @@ button::-moz-focus-inner,
 }
 
 /* Replace focus style removed in the border reset above */
+
 button:-moz-focusring,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
@@ -234,6 +243,7 @@ select {
 }
 
 /* Remove the default button styling in all browsers */
+
 button,
 input,
 select,
@@ -247,6 +257,7 @@ textarea {
 }
 
 /* Style select like a standard input */
+
 select {
     appearance: none; 
 }
